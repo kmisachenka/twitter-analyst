@@ -16,7 +16,7 @@ exports.top = function(req, res) {
 exports.results = function(req, res) {
     var query = req.query.q;
     if (query) {
-        db.getCollection('searches').insert({terms: query})};
+        db.getCollection('searches').insert({terms: query});
         db.saveDatabase();
 
         client.get('search/tweets', {q: query}, function(error, tweets, response) {
